@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class DataBindingComponent {
 
+
+  name:string = "raj";
+  age:number = 20;
+  address:string = "hyd";
+
+  isInValid:boolean =true;
+
+  phone:string = "+91";
+
+  submit(){
+    alert("submitted");
+  }
+
 }

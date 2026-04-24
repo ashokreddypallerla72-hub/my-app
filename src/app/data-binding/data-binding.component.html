@@ -1,1 +1,15 @@
 <p>data-binding works!</p>
+
+<!-- Interpolation -->
+<h3>My name is {{name}}</h3>
+<h3>My age is {{age}}</h3>
+<h3>my address is {{address}}</h3>
+
+<!-- property binding -->
+ <button [disabled]="isInValid">submit</button>
+
+
+ <!-- Event binding -->
+ <button (click)="submit()">submit</button>
+
+ <input type="text" [(ngModel)]="phone">
