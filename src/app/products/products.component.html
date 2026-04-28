@@ -1,1 +1,74 @@
 <p>products works!</p>
+<div>
+    <input type="text" placeholder="search" [(ngModel)]="term">
+    <button (click)="search()">search</button>
+    <br><br>
+
+    <button (click)="pricelowtohigh()">price low to high</button>
+    <button (click)="pricehightolow()">price high to low</button>
+    <button (click)="ratinglowtohigh()">rating low to high</button>
+    <button (click)="ratinghightolow()">rating high to low</button>
+    <br><br>
+
+    <button (click)="applydisscount()">Apply 50% disscount</button>
+    <button (click)="pricewithdeliverycharges()">price with delivery charges</button>
+
+    <br><br>
+    <button (click)="totalprice()">total price</button>
+    <button (click)="totalcartitems()">total cart items</button>
+</div>
+
+<div>
+    <label for="">Name:</label>
+    <input type="text" [(ngModel)="name"]>
+    <br>
+    <label for="">price:</label>
+    <input type="text">
+    <br>
+    <label for="">Rating:</label>
+    <input type="text">
+    <br>
+    <label for="">Free Delivery</label>
+    <input type="radio" class="a">
+    <label for="">Yes</label>
+    <input type="radio" class="a">
+    <label for="">No</label>
+    <br> <br>
+    <button (click)="create()">Add to cart</button>
+
+
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>S NO</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Rating</th>
+            <th>Free Delivery</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+
+
+        <tr *ngFor="let product of products; let i=index">
+
+            <td>{{i+1}}</td>
+            <td>{{product.productName}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.rating}}</td>
+            <td>{{freeDelivery}}</td>
+            <td>{{product.actions}}</td>
+
+            <td>
+                <button (click)="delete(i)" class="red-button">delete</button>
+            </td>
+
+        </tr>
+
+    </tbody>
+</table>
