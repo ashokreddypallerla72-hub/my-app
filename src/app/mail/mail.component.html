@@ -1,0 +1,19 @@
+<p>mail works!</p>
+
+<div class="mail-container">
+
+    <div class="mail-card" *ngFor="let m of mail; let i = index">
+
+        <div class="mail-content">
+
+            <h3 [ngClass]="m.completed ? 'true-mail' : 'false-mail'">
+                {{i + 1}}. {{m.title}}
+            </h3>
+
+            
+
+        </div>
+
+    </div>
+
+</div>
