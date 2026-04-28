@@ -1,0 +1,41 @@
+<p>accounts works!</p>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>account_name</th>
+            <th>available_balance</th>
+            <th>account_number</th>
+            <th>city</th>
+            <th>profie_picture</th>
+            <th>ifsc_code</th>
+            <th>id</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let Account of Accounts">
+            <td> {{Account.account_name}}</td>
+            <td>{{Account.available_balance}}</td>
+            <td>{{Account.account_number}}</td>
+            <td>{{Account.city}}</td>
+
+            <td>
+                <img [src]="Account.profie_picture" alt="" width="50px" height="50px">
+            </td>
+            <td>{{Account.ifsc_code}}</td>
+            <td>{{Account.id}}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<!-- {
+    "account_name": "Credit Card Account",
+    "available_balance": "841.85",
+    "account_number": "83458615",
+    "city": "Dawsonton",
+    "profie_picture": "https://avatars.githubusercontent.com/u/60218181",
+    "ifsc_code": "289511488",
+    "id": "66"
+  }, -->
