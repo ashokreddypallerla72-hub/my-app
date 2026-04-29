@@ -22,4 +22,32 @@ export class VehiclesComponent {
     )
   }
 
+  
+  deleteVehicle(id:string){
+    this.vehicleService.deleteVehicles(id).subscribe(
+      (data:any)=>{
+        alert("deleted successfully");
+        location.reload();
+      },
+      (err:any)=>{
+        alert('delete failed');
+      }
+    )
+  }
+
+
+   term:string ="";
+  
+  filterVehicles(){
+    this.vehicleService.getFilteredVehicles(this.term).subscribe(
+      (data:any)=>{
+        this.vehicles = data;
+       
+      },
+      (err:any)=>{
+        alert("internal server error");
+      }
+    )
+  }
+
 }

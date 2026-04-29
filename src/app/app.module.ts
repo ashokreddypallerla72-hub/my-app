@@ -20,6 +20,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { AccountsComponent } from './accounts/accounts.component';
 import { FlipkartComponent } from './flipkart/flipkart.component';
 import { MailComponent } from './mail/mail.component';
+// import { WeatherComponent } from './weather/weather.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { MailComponent } from './mail/mail.component';
     VehicleComponent,
     AccountsComponent,
     FlipkartComponent,
-    MailComponent
+    MailComponent,
+    // WeatherComponent
 
   ],
   imports: [
