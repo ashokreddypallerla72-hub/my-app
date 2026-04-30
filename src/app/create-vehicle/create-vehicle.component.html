@@ -1,0 +1,42 @@
+<p>create-vehicle works!</p>
+
+<h1>Create Vehicle Form</h1>
+
+<form [formGroup]="vehicleForm" (ngSubmit)="submit()">
+    <label for="">vehicles:</label>
+    <input type="text" formControlName="Vehicle">
+    <br>
+
+    <label for="">  manufacturer:</label>
+    <input type="text" formControlName="manufacturer">
+    <br>
+
+    <label for="">model:</label>
+    <input type="text" formControlName="model">
+    <br>
+
+    <label for="">type:</label>
+    <input type="text" formControlName="type">
+    <br>
+
+    <label for="">fuel:</label>
+    <input type="text" formControlName="fuel">
+    <br>
+
+    <label for="">color:</label>
+    <input type="text" formControlName="color">
+    <br>
+
+    <label for="">image:</label>
+    <input type="text" formControlName="image">
+    <br>
+
+    <input type="submit" >
+
+  
+
+    
+
+    
+
+</form>

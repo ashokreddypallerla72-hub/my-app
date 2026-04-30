@@ -9,7 +9,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HomeComponent } from './home/home.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DirectivesComponent } from './directives/directives.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { UsersComponent } from './users/users.component';
@@ -20,6 +20,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { AccountsComponent } from './accounts/accounts.component';
 import { FlipkartComponent } from './flipkart/flipkart.component';
 import { MailComponent } from './mail/mail.component';
+import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
 // import { WeatherComponent } from './weather/weather.component';
 
 @NgModule({
@@ -40,6 +41,7 @@ import { MailComponent } from './mail/mail.component';
     AccountsComponent,
     FlipkartComponent,
     MailComponent,
+    CreateVehicleComponent,
     // WeatherComponent
 
   ],
@@ -47,7 +49,8 @@ import { MailComponent } from './mail/mail.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
