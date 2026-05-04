@@ -13,6 +13,10 @@ export class VehicleService {
     return this.httpClient.get("https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction?limit=10&page=1");
   }
 
+   getVehicle(id:string):Observable<any>{
+    return this.httpClient.get("https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction/"+id);
+  }
+
    getSortVehicles(column:string, order:string):Observable<any>{
     return this.httpClient.get("https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction?sortBy="+column+"&order="+order);
   }
