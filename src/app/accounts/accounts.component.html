@@ -1,6 +1,7 @@
 <p>accounts works!</p>
 <input type="text" placeholder="search" [(ngModel)]="term">
 <button class="blue-button " (click)="filterAccounts()">search</button>
+<button class="blue-button " (click)="pageAccountsparameters()">search2</button>
 
 <label for="">Column:</label>
 <select [(ngModel)]= "column">
@@ -21,6 +22,7 @@
 </select>
 
 <button class="blue-button" (click)="sortAccounts()">sort</button>
+<button class="blue-button" (click)="pageAccountsparameters()">sort2</button>
 
 
 <table>
@@ -62,6 +64,15 @@
   <button 
                 class="yellow-button" 
                 (click)="pageAccounts(i+1)"
+                *ngFor = "let page of [].constructor(10);  let i = index">
+
+                {{i+1}}</button> <br>
+
+
+
+                  <button 
+                class="yellow-button" 
+                (click)="pageAccountsparameters(i+1)"
                 *ngFor = "let page of [].constructor(10);  let i = index">
 
                 {{i+1}}</button>

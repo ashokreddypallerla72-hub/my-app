@@ -1,6 +1,6 @@
-<!-- <p>weather works!</p>
+<p>weather works!</p>
 
-<div class="weather-card" *ngIf="a && a.current_weather">
+<div class="weather-card" *ngIf="a?.current_weather">
   <h2>Weather in Hyderabad</h2>
 
   <div class="icon">☀️</div>
@@ -11,7 +11,6 @@
 
   <div class="details">
     <p>Wind Speed: {{ a.current_weather.windspeed }} km/h</p>
-
     <p>
       Wind Direction:
       {{ a.current_weather.winddirection }}°
@@ -19,5 +18,7 @@
     </p>
   </div>
 
-  
- -->
+  <div class="daytime" *ngIf="a.current_weather.is_day === 1">
+    Daytime
+  </div>
+</div>

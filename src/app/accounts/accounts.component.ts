@@ -72,4 +72,20 @@ export class AccountsComponent {
 
     }
 
+      pageAccountsparameters(page:number=1){
+      this.AccountService.getpagedAccountsparameter(page,this.order,this.term,this.column).subscribe(
+
+        (data:any)=>{
+        this.Accounts=data;
+        
+      },
+      (err:any)=>{
+        alert("Internal server error");
+      }
+      )
+
+    }
+
+
+
 }
