@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { VehicleService } from '../vehicle.service';
+import { Vehicle } from '../vehicle';
 
 @Component({
   selector: 'app-vehicles',
@@ -8,14 +9,14 @@ import { VehicleService } from '../vehicle.service';
 })
 export class VehiclesComponent {
 
-  vehicles:any =[];
+  vehicles: Vehicle[] =[];
 
   constructor(private vehicleService:VehicleService){
     vehicleService.getVehicles().subscribe(
-      (data:any)=>{
+      (data: Vehicle[])=>{
         this.vehicles = data;
       },
-      (err:any)=>{
+      (err:Error)=>{
         alert("Internal serve errpr");
       }
     )
@@ -28,11 +29,11 @@ export class VehiclesComponent {
   sortVehicles(){
     this.vehicleService
     .getSortVehicles(this.column, this.order).subscribe(
-      (data:any)=>{
+      (data:Vehicle[])=>{
         this.vehicles = data;
       },
 
-      (err:any)=>{
+      (err:Error)=>{
         alert("internal server error");
       }
     )
@@ -43,11 +44,11 @@ export class VehiclesComponent {
   pageVehicles(page:number){
     this.vehicleService.getpageVehicles(page).subscribe(
   
-      (data:any)=>{
+      (data:Vehicle[])=>{
         this.vehicles = data;
       },
 
-      (err:any)=>{
+      (err:Error)=>{
         alert("internal server error");
       }
     )
@@ -59,11 +60,11 @@ export class VehiclesComponent {
   
   deleteVehicle(id:string){
     this.vehicleService.deleteVehicles(id).subscribe(
-      (data:any)=>{
+      (data:Vehicle)=>{
         alert("deleted successfully");
         location.reload();
       },
-      (err:any)=>{
+      (err:Error)=>{
         alert('delete failed');
       }
     )
@@ -74,11 +75,11 @@ export class VehiclesComponent {
   
   filterVehicles(){
     this.vehicleService.getFilteredVehicles(this.term).subscribe(
-      (data:any)=>{
+      (data:Vehicle[])=>{
         this.vehicles = data;
        
       },
-      (err:any)=>{
+      (err:Error)=>{
         alert("internal server error");
       }
     )
@@ -86,11 +87,11 @@ export class VehiclesComponent {
 
     getVehiclesWithParams(page:number=1){
     this.vehicleService.getVehiclesWithParams(this.term,this.column,this.order,page).subscribe(
-      (data:any)=>{
+      (data:Vehicle[])=>{
         this.vehicles = data;
        
       },
-      (err:any)=>{
+      (err:Error)=>{
         alert("internal server error");
       }
     )

@@ -23,6 +23,7 @@ import { MailComponent } from './mail/mail.component';
 import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 import { WeatherComponent } from './weather/weather.component';
+import { AccountDetailsComponent } from './account-details/account-details.component';
 // import { WeatherComponent } from './weather/weather.component';
 
 @NgModule({
@@ -46,6 +47,7 @@ import { WeatherComponent } from './weather/weather.component';
     CreateVehicleComponent,
     VehicleDetailsComponent,
     WeatherComponent,
+    AccountDetailsComponent,
     // WeatherComponent
 
   ],

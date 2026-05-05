@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { VehicleService } from '../vehicle.service';
+import { Vehicle } from '../vehicle';
 
 @Component({
   selector: 'app-vehicle-details',
@@ -8,15 +9,16 @@ import { VehicleService } from '../vehicle.service';
   styleUrls: ['./vehicle-details.component.css']
 })
 export class VehicleDetailsComponent {
-  vehicle:any ={};
+
+  vehicle:Vehicle =<Vehicle>{};
+
   constructor(private activatedRoute:ActivatedRoute,
     private vehicleService:VehicleService){
       activatedRoute.params.subscribe(
-        (data:any)=>{
-          vehicleService.getVehicle(data.id).subscribe(
-            (data:any)=>{
+        (data:Params)=>{
+          vehicleService.getVehicle(data['id']).subscribe(
+            (data:Vehicle)=>{
               this.vehicle=data;
-
             }
           )
         }

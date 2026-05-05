@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { VehicleService } from '../vehicle.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Vehicle } from '../vehicle';
 
 @Component({
   selector: 'app-create-vehicle',
@@ -24,10 +25,10 @@ id:string = "";
 
 constructor(private vehicleService:VehicleService, private activatedRoute:ActivatedRoute ){
   activatedRoute.params.subscribe(
-    (data:any)=>{
-      this.id=data.id;
-      vehicleService.getVehicle(data.id).subscribe(
-        (data:any)=>{
+    (data:Params)=>{
+      this.id=data[ 'id'];
+      vehicleService.getVehicle(data[ 'id']).subscribe(
+        (data: Vehicle) =>{
           this.vehicleForm.patchValue(data);
         }
       )

@@ -18,6 +18,7 @@ import { CreateVehicleComponent } from './create-vehicle/create-vehicle.componen
 import { VehicleComponent } from './vehicle/vehicle.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 import { WeatherComponent } from './weather/weather.component';
+import { AccountDetailsComponent } from './account-details/account-details.component';
 
 const routes: Routes = [
   {path:'login', component:LoginComponent},
@@ -37,6 +38,7 @@ const routes: Routes = [
     {path:'create-vehicle',component:CreateVehicleComponent},
     {path:'vehicle-details/:id',component:VehicleDetailsComponent},
     {path:'edit-vehicle/:id',component:CreateVehicleComponent},
+    {path:'account-details/id', component:AccountDetailsComponent},
 
   ]},
   {path:'',component:LoginComponent},
