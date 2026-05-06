@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AppRoutingModule } from "../app-routing.module";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,5 +8,15 @@ import { AppRoutingModule } from "../app-routing.module";
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent {
+
+  constructor (private router:Router) {}
+
+  logout(){
+    // go to login
+    this.router.navigateByUrl("/login");
+
+    // remove token
+    localStorage.removeItem("token");
+  }
 
 }

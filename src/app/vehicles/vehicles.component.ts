@@ -17,7 +17,7 @@ export class VehiclesComponent {
         this.vehicles = data;
       },
       (err:Error)=>{
-        alert("Internal serve errpr");
+        alert("internal server error");
       }
     )
   }

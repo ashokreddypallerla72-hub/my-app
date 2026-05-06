@@ -1,14 +1,14 @@
 <div class="parent">
-    <form action="">
-        <label for="">Email</label>
-        <input type="text">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <label for="">email</label>
+        <input type="text" formControlName="email">
         <br>
 
         <label for="">Password</label>
-        <input type="text">
+        <input type="text" formControlName="password">
         <br>
         
-        <button routerLink="/dashboard">login</button>
+        <button type="submit">Login</button>
     </form>
 
 </div>
