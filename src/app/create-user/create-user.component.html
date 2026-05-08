@@ -1,23 +1,35 @@
 <p>create-user works!</p>
 
-<form  [formGroup]="userForm"(ngSubmit)="submit()">
+<form  [formGroup]="userForm" (ngSubmit)="submit()">
 
-    <label for="Name"></label>
+    <label for="">name</label>
     <input type="text" formControlName="name">
     <br>
 
-    <label for="Age"></label>
+    <label for="">age</label>
     <input type="number" formControlName="age">
     <br>
 
-    <label for="phone"></label>
+    <label for="">phone</label>
     <input type="number" formControlName="phone">
     <br>
 
 
-    <label for="Email"></label>
+    <label for="">email</label>
     <input type="email" formControlName="email">
     <br>
+
+    <div formGroupName="address">
+
+        <label for="">city:</label>
+        <input type="text" formControlName="city">
+        <br>
+        <label for="">pin:</label>
+        <input type="number" formControlName="pin">
+        <br>
+        
+
+    </div>
 
     <input type="submit">
 

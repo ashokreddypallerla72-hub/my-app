@@ -5,6 +5,7 @@ import { FormControl, FormGroup, ɵInternalFormsSharedModule } from '@angular/fo
   selector: 'app-create-user',
   templateUrl: './create-user.component.html',
   styleUrls: ['./create-user.component.css'],
+  
 })
 export class CreateUserComponent {
 
@@ -13,6 +14,11 @@ export class CreateUserComponent {
     age: new FormControl(),
     phone: new FormControl(),
     email: new FormControl(),
+    address : new FormGroup({
+      city :new FormControl(),
+      pin: new FormControl(),
+    })
+
   })
 
   submit(){

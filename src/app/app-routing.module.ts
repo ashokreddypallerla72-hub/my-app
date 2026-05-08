@@ -21,6 +21,7 @@ import { WeatherComponent } from './weather/weather.component';
 import { AccountDetailsComponent } from './account-details/account-details.component';
 import { AuthGuard } from './auth.guard';
 import { NotifyGuard } from './notify.guard';
+import { CreateUserComponent } from './create-user/create-user.component';
 
 const routes: Routes = [
   {path:'login', component:LoginComponent},
@@ -38,6 +39,7 @@ const routes: Routes = [
     {path:'mail',component:MailComponent},
     {path:'weather',component:WeatherComponent},
     {path:'create-vehicle', canDeactivate:[NotifyGuard],component:CreateVehicleComponent},
+    {path:'create-user',component:CreateUserComponent},
     {path:'vehicle-details/:id',component:VehicleDetailsComponent},
     {path:'edit-vehicle/:id',component:CreateVehicleComponent},
     {path:'account-details/id', component:AccountDetailsComponent},
