@@ -31,4 +31,10 @@ setup
 
 **) allow scripts exection form powershell
    1) open powershell as administator
-   2) run command : set-execution policy unrestricted          
+   2) run command : set-execution policy unrestricted    
+
+
+
+
+
+   4)      
