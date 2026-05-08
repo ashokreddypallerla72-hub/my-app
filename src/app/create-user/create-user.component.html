@@ -1,6 +1,6 @@
 <p>create-user works!</p>
 
-<form  [formGroup]="userForm" (ngSubmit)="submit()">
+<form [formGroup] = "userForm" (ngSubmit)="submit()">
 
     <label for="">name</label>
     <input type="text" formControlName="name">
@@ -27,6 +27,37 @@
         <label for="">pin:</label>
         <input type="number" formControlName="pin">
         <br>
+
+        <label for="">Cards:</label>
+        <button type="button" (click)="addCard()">add card</button>
+
+        <div formArrayName="Cards">
+            <div *ngFor="let card of cardsFormArray.controls;let i=index">
+                <div formGroupName="{{i}}">
+
+                    <h4>card {{i+1}}</h4>
+
+                    <label for="">number</label>
+                    <input type="number" formControlName="number">
+                    <br>
+
+                     <label for="">Name</label>
+                    <input type="number" formControlName="name">
+                    <br>
+
+                     <label for="">cvv</label>
+                    <input type="number" formControlName="cvv">
+                    <br>
+
+                    <button (click)="deleteCard(i)">Delete</button>
+
+                
+                    <hr>
+
+                </div>
+
+            </div>
+        </div>
         
 
     </div>
