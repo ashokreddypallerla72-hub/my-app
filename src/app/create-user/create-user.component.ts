@@ -18,7 +18,10 @@ export class CreateUserComponent {
       city :new FormControl(),
       pin: new FormControl(),
     }),
-    cards:new FormArray([])
+    cards:new FormArray([]),
+    type:new FormControl(),
+    busFee:new FormControl(),
+    hostelFee:new FormControl(),
 
   })
 

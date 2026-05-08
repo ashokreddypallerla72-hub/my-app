@@ -58,9 +58,32 @@
 
             </div>
         </div>
+
+       
+
+
         
 
     </div>
+
+     <label for="">Type</label>
+        <input type="radio" name="type" value="Day Scholor" formControlName="type">
+        <label for="">Day Scholor</label>
+        <input type="radio" name="type" value="Residential" formControlName="type">
+        <label for="">Residential</label>
+        <br>
+
+        <div *ngIf="userForm.get('type')?.value == 'Day Scholor' "> 
+            <label for="">bus fee :</label>
+            <input type="number"  formControlName="busFee">
+            <br>
+        </div>
+
+        <div *ngIf="userForm.get('type')?.value == 'Residential' ">
+            <label for="">hostel fee :</label>
+            <input type="number" formControlName="hostelFee">
+            <br>
+        </div>
 
     <input type="submit">
 
