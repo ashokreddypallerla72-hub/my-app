@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ɵInternalFormsSharedModule } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, ɵInternalFormsSharedModule } from '@angular/forms';
+import { BrowserModule } from "@angular/platform-browser";
 
 @Component({
   selector: 'app-create-user',
   templateUrl: './create-user.component.html',
-  styleUrls: ['./create-user.component.css'],
-  
+  styleUrls: ['./create-user.component.css'],  
 })
 export class CreateUserComponent {
 
@@ -17,9 +17,30 @@ export class CreateUserComponent {
     address : new FormGroup({
       city :new FormControl(),
       pin: new FormControl(),
-    })
+    }),
+    cards:new FormArray([])
 
   })
+
+  get cardsFormArray(){
+    return this.userForm.get('cards') as FormArray;
+  }
+
+  addCard(){
+    this.cardsFormArray.push(
+      new FormGroup({
+        number:new FormControl(),
+        name:new FormControl(),
+        cvv:new FormControl(),
+      })
+    )
+
+
+  }
+
+  deleteCard(i:number){
+    this.cardsFormArray.removeAt(i);
+  }
 
   submit(){
     console.log(this.userForm);
