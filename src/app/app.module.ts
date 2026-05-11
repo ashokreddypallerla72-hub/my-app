@@ -25,6 +25,8 @@ import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.compo
 import { WeatherComponent } from './weather/weather.component';
 import { AccountDetailsComponent } from './account-details/account-details.component';
 import { CreateUserComponent } from './create-user/create-user.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 // import { WeatherComponent } from './weather/weather.component';
 
 @NgModule({
@@ -50,6 +52,8 @@ import { CreateUserComponent } from './create-user/create-user.component';
     WeatherComponent,
     AccountDetailsComponent,
     CreateUserComponent,
+    ParentComponent,
+    ChildComponent,
     // WeatherComponent
 
   ],
