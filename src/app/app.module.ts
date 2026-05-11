@@ -26,6 +26,7 @@ import { WeatherComponent } from './weather/weather.component';
 import { AccountDetailsComponent } from './account-details/account-details.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { ValidatorsComponent } from './validators/validators.component';
+import { ComponentCommunicationComponent } from './component-communication/component-communication.component';
 // import { WeatherComponent } from './weather/weather.component';
 
 @NgModule({
@@ -52,6 +53,7 @@ import { ValidatorsComponent } from './validators/validators.component';
     AccountDetailsComponent,
     CreateUserComponent,
     ValidatorsComponent,
+    ComponentCommunicationComponent,
     // WeatherComponent
 
   ],
