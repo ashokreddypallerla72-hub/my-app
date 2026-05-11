@@ -16,6 +16,9 @@
     <br><br>
     <button (click)="totalprice()">total price</button>
     <button (click)="totalcartitems()">total cart items</button>
+
+    <!-- Rating for rating components/products -->
+     <!-- <app-rating [rating]="3" (ratingChange)="updateRating($event)">out of 5</app-rating> -->
 </div>
 
 <div>
@@ -60,7 +63,9 @@
             <td>{{i+1}}</td>
             <td>{{product.productName}}</td>
             <td>{{product.price}}</td>
-            <td>{{product.rating}}</td>
+            <td>
+                <app-rating [rating]="product.rating" (ratingChange)="updateRating($event)">out of 5</app-rating>
+            </td>
             <td>{{freeDelivery}}</td>
             <td>{{product.actions}}</td>
 

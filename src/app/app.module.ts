@@ -27,6 +27,7 @@ import { AccountDetailsComponent } from './account-details/account-details.compo
 import { CreateUserComponent } from './create-user/create-user.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { RatingComponent } from './rating/rating.component';
 // import { WeatherComponent } from './weather/weather.component';
 
 @NgModule({
@@ -54,6 +55,7 @@ import { ChildComponent } from './child/child.component';
     CreateUserComponent,
     ParentComponent,
     ChildComponent,
+    RatingComponent,
     // WeatherComponent
 
   ],

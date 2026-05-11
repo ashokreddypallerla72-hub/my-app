@@ -2,3 +2,12 @@
 
                                 <!-- catch -->
 <app-child [count]="100" (countChange)="updateCount($event)">xxxxxx</app-child>
+
+<app-rating [rating]="3" (ratingChange)="updateRating($event)">out of 5</app-rating>
+
+
+
+<!-- <button [disabled]="true" (click)="submit()">submit</button>
+
+<app-rating [rating]="3" (ratingChange)="updateRating()">out of 5</app-rating> -->
+

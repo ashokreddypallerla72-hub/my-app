@@ -11,4 +11,9 @@ export class ParentComponent {
     alert(value);
   }
 
+  updateRating(value:number){
+    alert(value);
+  }
+  
+
 }
