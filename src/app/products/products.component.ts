@@ -112,4 +112,9 @@ search(){
 onlyfreedelivery(){
 
 }
+
+updateRating(rating:number){
+  alert("new rating: "+rating);
+}
+
 }
