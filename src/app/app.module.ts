@@ -28,6 +28,9 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { RatingComponent } from './rating/rating.component';
+import { ItemsComponent } from './items/items.component';
+import { NavComponent } from './nav/nav.component';
+import { CartComponent } from './cart/cart.component';
 // import { WeatherComponent } from './weather/weather.component';
 
 @NgModule({
@@ -56,6 +59,9 @@ import { RatingComponent } from './rating/rating.component';
     ParentComponent,
     ChildComponent,
     RatingComponent,
+    ItemsComponent,
+    NavComponent,
+    CartComponent,
     // WeatherComponent
 
   ],
