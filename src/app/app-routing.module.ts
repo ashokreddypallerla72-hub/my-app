@@ -23,6 +23,9 @@ import { AuthGuard } from './auth.guard';
 import { NotifyGuard } from './notify.guard';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { ParentComponent } from './parent/parent.component';
+import { ItemsComponent } from './items/items.component';
+import { NavComponent } from './nav/nav.component';
+import { CartComponent } from './cart/cart.component';
 
 
 const routes: Routes = [
@@ -45,7 +48,10 @@ const routes: Routes = [
     {path:'vehicle-details/:id',component:VehicleDetailsComponent},
     {path:'edit-vehicle/:id',component:CreateVehicleComponent},
     {path:'account-details/id', component:AccountDetailsComponent},
-    {path:'parent',component:ParentComponent}
+    {path:'parent',component:ParentComponent},
+    {path:'items',component:ItemsComponent},
+    {path:'nav',component:NavComponent},
+    {path:'cart',component:CartComponent},
 
   ]},
   {path:'',component:LoginComponent},
