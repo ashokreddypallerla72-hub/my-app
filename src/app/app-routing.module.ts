@@ -54,6 +54,7 @@ const routes: Routes = [
     {path:'nav',component:NavComponent},
     {path:'cart',component:CartComponent},
     {path:'contact-sales',component:ContactSalesComponent},
+    {path:'payment',loadChildren: ()=>import('./payment/payment.module').then(m=>m.PaymentModule)}
 
   ]},
   {path:'',component:LoginComponent},

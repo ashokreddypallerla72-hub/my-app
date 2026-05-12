@@ -72,7 +72,7 @@ import { ContactModule } from './contact/contact.module';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    ContactModule
+    ContactModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
