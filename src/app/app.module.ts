@@ -16,7 +16,7 @@ import { UsersComponent } from './users/users.component';
 import { ProductsComponent } from './products/products.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { AccountsComponent } from './accounts/accounts.component';
 import { FlipkartComponent } from './flipkart/flipkart.component';
 import { MailComponent } from './mail/mail.component';
@@ -34,6 +34,7 @@ import { CartComponent } from './cart/cart.component';
 import { ContactModule } from './contact/contact.module';
 import { PricePipe } from './price.pipe';
 import { CapitalDirective } from './capital.directive';
+import { TokenInterceptor } from './token.interceptor';
 // import { WeatherComponent } from './weather/weather.component';
 
 @NgModule({
@@ -78,7 +79,13 @@ import { CapitalDirective } from './capital.directive';
     ReactiveFormsModule,
     ContactModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:TokenInterceptor,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
