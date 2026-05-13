@@ -44,6 +44,7 @@
         <tr *ngFor="let vehicle of vehicles">
             <td>{{vehicle.Vehicle}}</td>
             <td>{{vehicle.manufacturer}}</td>
+            <td>{{vehicle.cost | price}}</td> 
             <td>{{vehicle.model}}</td>
             <td>{{vehicle.type}}</td>
             <td>{{vehicle.fuel}}</td>
