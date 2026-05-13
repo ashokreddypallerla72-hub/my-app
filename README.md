@@ -37,4 +37,25 @@ setup
 
 
 
-   4)      
+   4)  
+
+
+
+
+
+   -----------------------------------------
+
+   1) sibling, module communication
+   2) customs, interceptor, authorization
+        - component  - D
+        - directive 
+        - pipe
+        -
+        -
+        -
+        -
+        -
+
+
+
+        -
