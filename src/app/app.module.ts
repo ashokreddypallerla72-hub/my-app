@@ -33,6 +33,7 @@ import { NavComponent } from './nav/nav.component';
 import { CartComponent } from './cart/cart.component';
 import { ContactModule } from './contact/contact.module';
 import { PricePipe } from './price.pipe';
+import { CapitalDirective } from './capital.directive';
 // import { WeatherComponent } from './weather/weather.component';
 
 @NgModule({
@@ -65,6 +66,7 @@ import { PricePipe } from './price.pipe';
     NavComponent,
     CartComponent,
     PricePipe,
+    CapitalDirective,
     // WeatherComponent
 
   ],
