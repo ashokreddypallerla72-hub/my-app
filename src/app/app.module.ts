@@ -35,6 +35,7 @@ import { ContactModule } from './contact/contact.module';
 import { PricePipe } from './price.pipe';
 import { CapitalDirective } from './capital.directive';
 import { TokenInterceptor } from './token.interceptor';
+import { FormTaskComponent } from './form-task/form-task.component';
 // import { WeatherComponent } from './weather/weather.component';
 
 @NgModule({
@@ -68,6 +69,7 @@ import { TokenInterceptor } from './token.interceptor';
     CartComponent,
     PricePipe,
     CapitalDirective,
+    FormTaskComponent,
     // WeatherComponent
 
   ],
@@ -78,6 +80,7 @@ import { TokenInterceptor } from './token.interceptor';
     HttpClientModule,
     ReactiveFormsModule,
     ContactModule,
+    
   ],
   providers: [
     {
