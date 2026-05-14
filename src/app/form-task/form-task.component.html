@@ -1,0 +1,203 @@
+<p>form-tasks works!</p>
+<form [formGroup]="productdata" (ngSubmit)="submit()">
+    <label for="">id</label>
+    <input type="text" formControlName="id">
+    <div *ngIf="productdata.get('id')?.touched && productdata.get('id')?.invalid">
+        <p *ngIf="productdata.get('id')?.errors?.['required']">Name is Required</p>
+        <p *ngIf="productdata.get('id')?.errors?.['minLength']">Min 3 Chars</p>
+    </div>
+    <br>
+    <label for="">title:</label>
+    <input type="text" formControlName="title">
+    <div *ngIf="productdata.get('title')?.touched && productdata.get('title')?.invalid">
+        <p *ngIf="productdata.get('title')?.errors?.['required']">age is Required</p>
+        <!-- <p *ngIf="productdata.get('name')?.errors?.['Required']">Min 3 Chars</p> -->
+    </div>
+    <br>
+    <label for="">description:</label>
+    <input type="text" formControlName="description">
+    <div *ngIf="productdata.get('description')?.touched && productdata.get('description')?.invalid">
+        <p *ngIf="productdata.get('description')?.errors?.['required']">description Number is Required</p>
+        <!-- <p *ngIf="productdata.get('name')?.errors?.['Required']">Min 3 Chars</p> -->
+    </div>
+    <br>
+    <label for="">category:</label>
+    <input type="text" formControlName="category">
+    <div *ngIf="productdata.get('category')?.touched && productdata.get('category')?.invalid">
+        <p *ngIf="productdata.get('category')?.errors?.['required']">mail is Required</p>
+        <!-- <p *ngIf="productdata.get('name')?.errors?.['Required']">Min 3 Chars</p> -->
+    </div>
+    <br>
+    <label for="">price:</label>
+    <input type="number" formControlName="price">
+    <div *ngIf="productdata.get('price')?.touched && productdata.get('price')?.invalid">
+        <p *ngIf="productdata.get('price')?.errors?.['required']">price is Required</p>
+        <p *ngIf="productdata.get('price')?.errors?.['pattern']">At least one c,s,N,Spe and Min 8 Len</p>
+    </div>
+    <br>
+    <label for="">Discount Percentage:</label>
+    <input type="number" formControlName="discountPercentage">
+    <br>
+    <label for="">rating:</label>
+    <input type="number" formControlName="rating">
+    <br>
+    <label for="">stock:</label>
+    <input type="number" formControlName="stock">
+    <br>
+    <label for="">Brand:</label>
+    <input type="text" formControlName="brand">
+    <br>
+    <label for="">SKU:</label>
+    <input type="text" formControlName="sku">
+    <br>
+    <label for="">Weight:</label>
+    <input type="number" formControlName="weight">
+    <br>
+    <label for="">WarrantyInfo:</label>
+    <input type="text" formControlName="Warrantyinfo">
+    <br>
+    <label for="">Shipping info:</label>
+    <input type="text" formControlName="shippinginfo">
+    <br>
+    <label for="">Availability Status:</label>
+    <input type="text" formControlName="availabilitystatus">
+    <br>
+    <label for="">ReturnPolicy:</label>
+    <input type="text" formControlName="returnpolicy">
+    <br>
+    <label for="">MinimumOrder Quantity:</label>
+    <input type="number" formControlName="MinimumOrderquantity">
+    <br>
+    <label for="">Thumbnail:</label>
+    <input type="text" formControlName="thumbnail">
+    <br>
+
+    <hr>
+    <label for="">dimensions: </label>
+    <div formGroupName="dimensions">
+        <label for="">width</label>
+        <input type="number" formControlName="width">
+        <br>
+        <label for="">height</label>
+        <input type="number" formControlName="height">
+        <br>
+        <label for="">depth</label>
+        <input type="number" formControlName="depth">
+        <br>
+    </div>
+    <hr>
+
+    <div formArrayName="reviews">
+        <label for="">Reviews:</label>
+        <button typr="button" (click)="addFormreviewArray()">add reviews</button>
+
+        <div *ngFor="let review of reviewFormArray.controls;let i=index">
+            <div formGroupName="{{i}}">
+                <h3>review {{i+1}}</h3>
+
+                <label for="">rating:</label>
+                <input type="number" formControlName="rating">
+                <div
+                    *ngIf="tagFormArray.controls[i]?.get('rating')?.touched && tagFormArray.controls[i]?.get('rating')?.invalid">
+                    <p *ngIf="tagFormArray.controls[i]?.get('rating')?.errors?.['required']">Card rating is required
+                    </p>
+                </div>
+                <label for="">comment:</label>
+                <input type="text" formControlName="comment">
+                <br>
+                <label for="">date:</label>
+                <input type="date" formControlName="date">
+                <br>
+                <label for="">reviewername:</label>
+                <input type="text" formControlName="reviewername">
+                <br>
+                <label for="">revieweremail:</label>
+                <input type="email" formControlName="revieweremail">
+                <br>
+                <button (click)="deletereview(i)">Delete</button>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+
+
+
+    <label for="">Tags:</label>
+    <button type="button" (click)="addFormArray()">add tag</button>
+
+    <div formArrayName="tags">
+        <div *ngFor="let tag of tagFormArray.controls;let i=index">
+            <div formGroupName="{{i}}">
+                <h3>tag {{i+1}}</h3>
+
+                <label for="">tag:</label>
+                <input type="text" formControlName="tags">
+                <div
+                    *ngIf="tagFormArray.controls[i]?.get('tags')?.touched && tagFormArray.controls[i]?.get('tags')?.invalid">
+                    <p *ngIf="tagFormArray.controls[i]?.get('tags')?.errors?.['required']">Card tags is required
+                    </p>
+                </div>
+                <br>
+                <button (click)="deletetag(i)">Delete</button>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <!-- meta creation -->
+    <label for="">Meta:</label>
+    <button typr="button" (click)="addFormmetaArray()">add tag</button>
+    <div formArrayName="meta">
+        <div *ngFor="let met of metaFormArray.controls;let i=index">
+            <div formGroupName="{{i}}">
+                <h3>Meta {{i+1}}</h3>
+
+                <label for="">createdAt:</label>
+                <input type="text" formControlName="createdAt">
+                <div
+                    *ngIf="tagFormArray.controls[i]?.get('createdAt')?.touched && tagFormArray.controls[i]?.get('createdAt')?.invalid">
+                    <p *ngIf="tagFormArray.controls[i]?.get('createdAt')?.errors?.['required']">Card tags is required
+                    </p>
+                </div>
+                <br>
+                <label for="">updatedAt:</label>
+                <input type="text" formControlName="updatedAt">
+                <br>
+                <label for="">barcode:</label>
+                <input type="barcode" formControlName="barcode">
+                <br>
+                <label for="">QR Code:</label>
+                <input type="qrcode" formControlName="qrCode">
+                <br>
+                <button (click)="deletemeta(i)">Delete</button>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <!-- image creation -->
+    <label for="">Images:</label>
+    <button typr="button" (click)="addimageFormArray()">add image</button>
+
+    <div formArrayName="image">
+        <div *ngFor="let img of imageFormArray.controls;let i=index">
+            <div formGroupName="{{i}}">
+                <h3>image {{i+1}}</h3>
+
+                <label for="">image:</label>
+                <input type="text" formControlName="image">
+                <div
+                    *ngIf="tagFormArray.controls[i]?.get('image')?.touched && tagFormArray.controls[i]?.get('image')?.invalid">
+                    <p *ngIf="tagFormArray.controls[i]?.get('image')?.errors?.['required']">Card image is required
+                    </p>
+                </div>
+                <button type="button" (click)="deleteimage(i)">Delete</button>
+            </div>
+        </div>
+    </div><hr>
+
+    <input type="submit">
+
+</form>
